@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>jobfit — drop your CV, get jobs</title>
+<meta name="description" content="Open source job search. Drop your CV in, it matches against thousands of company job boards in your browser. Nothing is uploaded.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>jobfit</h1>
+  <p class="tag">Drop your CV in. Get the jobs that actually match.</p>
+  <p class="privacy">
+    Your CV is read in this tab and never sent anywhere.
+    There is no account, no server, and no upload.
+  </p>
+</header>
+
+<main>
+  <section id="drop" class="drop">
+    <input type="file" id="file" accept=".txt,.md,.pdf" hidden>
+    <p class="big">Drop a CV here</p>
+    <p class="small">
+      .txt, .md or .pdf &nbsp;·&nbsp;
+      <button type="button" id="browse" class="link">choose a file</button> &nbsp;·&nbsp;
+      <button type="button" id="paste-toggle" class="link">paste it instead</button>
+    </p>
+    <textarea id="paste" placeholder="Paste your CV here" hidden></textarea>
+  </section>
+
+  <section id="status" class="status" hidden></section>
+
+  <section id="controls" class="controls" hidden>
+    <label>
+      <input type="checkbox" id="hide-stale" checked>
+      Hide postings open longer than
+      <select id="stale-days">
+        <option value="60">60 days</option>
+        <option value="90" selected>90 days</option>
+        <option value="180">180 days</option>
+      </select>
+    </label>
+    <label>
+      <input type="checkbox" id="remote-only">
+      Remote only
+    </label>
+    <label class="skills-line">
+      Matched on: <span id="my-skills"></span>
+    </label>
+  </section>
+
+  <section id="results"></section>
+</main>
+
+<footer>
+  <p>
+    Job data is a static file in
+    <a href="https://github.com/GeoCodeCrafter/jobfit">the repo</a>, rebuilt from
+    public company job boards. MIT licensed.
+  </p>
+  <p class="small">
+    Ages come from the company's own hiring system, not the job board. Lever
+    doesn't publish a reliable date, so those postings show no age rather than a
+    guess.
+  </p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>

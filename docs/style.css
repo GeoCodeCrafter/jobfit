@@ -1,0 +1,124 @@
+:root {
+  --bg: #0e1116;
+  --panel: #161b22;
+  --line: #262c36;
+  --ink: #e6edf3;
+  --dim: #8b949e;
+  --faint: #6b7280;
+  --accent: #4ea1ff;
+  --good: #3fb950;
+  --warn: #d29922;
+  --bad: #f85149;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0 20px 80px;
+  background: var(--bg);
+  color: var(--ink);
+  font: 15px/1.6 var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+header, main, footer { max-width: 820px; margin: 0 auto; }
+
+header { padding: 56px 0 28px; }
+h1 { font: 700 30px/1 var(--mono); margin: 0 0 10px; letter-spacing: -0.02em; }
+.tag { font-size: 19px; margin: 0 0 14px; }
+.privacy { color: var(--dim); font-size: 14px; margin: 0; max-width: 52ch; }
+
+a { color: var(--accent); }
+
+/* drop zone */
+
+.drop {
+  border: 1.5px dashed var(--line);
+  border-radius: 12px;
+  padding: 40px 24px;
+  text-align: center;
+  transition: border-color .15s, background .15s;
+}
+.drop.over { border-color: var(--accent); background: rgba(78, 161, 255, .06); }
+.drop .big { font-size: 17px; margin: 0 0 8px; }
+.drop .small { color: var(--dim); font-size: 13.5px; margin: 0; }
+
+.link {
+  background: none; border: 0; padding: 0;
+  color: var(--accent); font: inherit; cursor: pointer; text-decoration: underline;
+}
+
+textarea {
+  width: 100%; min-height: 180px; margin-top: 18px; padding: 12px;
+  background: var(--bg); color: var(--ink);
+  border: 1px solid var(--line); border-radius: 8px;
+  font: 13px/1.5 var(--mono); resize: vertical;
+}
+
+/* status + controls */
+
+.status { margin: 22px 0 0; color: var(--dim); font-size: 14px; }
+
+.controls {
+  display: flex; flex-wrap: wrap; gap: 18px 26px;
+  margin: 16px 0 26px; padding: 14px 0 18px;
+  border-bottom: 1px solid var(--line);
+  font-size: 14px; color: var(--dim);
+}
+.controls label { display: flex; align-items: center; gap: 7px; }
+.controls select {
+  background: var(--panel); color: var(--ink);
+  border: 1px solid var(--line); border-radius: 6px; padding: 3px 6px; font: inherit;
+}
+.skills-line { flex-basis: 100%; color: var(--faint); font-size: 13px; }
+#my-skills { color: var(--dim); }
+
+/* results */
+
+.job {
+  display: flex; gap: 16px; align-items: flex-start;
+  padding: 16px 0; border-bottom: 1px solid var(--line);
+}
+
+.score {
+  flex: none; width: 46px; height: 46px; border-radius: 10px;
+  display: grid; place-items: center;
+  font: 700 15px/1 var(--mono);
+  background: color-mix(in srgb, var(--accent) calc(var(--v) * 0.7%), var(--panel));
+  color: var(--ink);
+}
+
+.body { flex: 1; min-width: 0; }
+.job h3 { font-size: 15.5px; margin: 0 0 4px; font-weight: 600; }
+.job h3 a { text-decoration: none; }
+.job h3 a:hover { text-decoration: underline; }
+.meta { margin: 0 0 8px; color: var(--dim); font-size: 13.5px; }
+.salary { color: var(--good); margin-left: 6px; }
+
+.tags { margin: 0; display: flex; flex-wrap: wrap; gap: 5px; }
+.tag {
+  font: 11.5px/1 var(--mono);
+  padding: 4px 7px; border-radius: 5px;
+  background: var(--panel); color: var(--dim); border: 1px solid var(--line);
+}
+
+.right { flex: none; text-align: right; }
+.age { font: 12px/1 var(--mono); color: var(--faint); white-space: nowrap; }
+.age.stale { color: var(--warn); }
+.age.unknown { color: var(--faint); font-style: italic; }
+
+footer {
+  margin-top: 50px; padding-top: 20px;
+  border-top: 1px solid var(--line);
+  color: var(--faint); font-size: 13px;
+}
+footer .small { font-size: 12.5px; }
+
+@media (max-width: 620px) {
+  .job { gap: 12px; }
+  .right { display: none; }
+  header { padding-top: 34px; }
+}
