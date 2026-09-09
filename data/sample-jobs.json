@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Frontend Engineer",
+    "company": "Placeholder Ltd",
+    "url": "https://example.com/jobs/1",
+    "skills": ["typescript", "react", "css", "webgl"],
+    "salary_min": 55000,
+    "days_live": 12
+  },
+  {
+    "title": "Senior Frontend Engineer",
+    "company": "Example Corp",
+    "url": "https://example.com/jobs/2",
+    "skills": ["typescript", "react", "node", "aws"],
+    "salary_min": 75000,
+    "days_live": 140
+  },
+  {
+    "title": "Data Engineer",
+    "company": "Placeholder Ltd",
+    "url": "https://example.com/jobs/3",
+    "skills": ["python", "sql", "airflow", "spark", "aws"],
+    "salary_min": 65000,
+    "days_live": 4
+  },
+  {
+    "title": "Product Designer",
+    "company": "Sample Studio",
+    "url": "https://example.com/jobs/4",
+    "skills": ["figma", "css", "html"],
+    "salary_min": 48000,
+    "days_live": 31
+  },
+  {
+    "title": "Backend Engineer",
+    "company": "Example Corp",
+    "url": "https://example.com/jobs/5",
+    "skills": ["python", "postgres", "docker", "kubernetes"],
+    "salary_min": 70000,
+    "days_live": 8
+  },
+  {
+    "title": "Creative Developer",
+    "company": "Sample Studio",
+    "url": "https://example.com/jobs/6",
+    "skills": ["javascript", "webgl", "canvas", "d3"],
+    "salary_min": 52000,
+    "days_live": 220
+  }
+]

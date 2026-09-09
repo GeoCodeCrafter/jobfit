@@ -1,0 +1,16 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "jobfit"
+version = "0.0.1"
+description = "Point it at your CV, get a list of jobs worth applying to."
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+jobfit = "jobfit.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/jobfit"]
