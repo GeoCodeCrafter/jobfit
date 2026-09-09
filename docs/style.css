@@ -73,6 +73,7 @@ textarea {
   background: var(--panel); color: var(--ink);
   border: 1px solid var(--line); border-radius: 6px; padding: 3px 6px; font: inherit;
 }
+.note { color: var(--faint); font-size: 12.5px; }
 .skills-line { flex-basis: 100%; color: var(--faint); font-size: 13px; }
 #my-skills { color: var(--dim); }
 
@@ -122,3 +123,19 @@ footer .small { font-size: 12.5px; }
   .right { display: none; }
   header { padding-top: 34px; }
 }
+
+.empty {
+  margin: 24px 0; padding: 16px 18px;
+  border: 1px solid var(--line); border-radius: 10px;
+  background: var(--panel); color: var(--dim); font-size: 14px;
+}
+
+.live-line { flex-basis: 100%; gap: 12px; flex-wrap: wrap; }
+.live-line .check { display: flex; align-items: center; gap: 6px; }
+
+.primary {
+  font: 600 13.5px var(--sans);
+  padding: 8px 14px; border-radius: 7px; cursor: pointer;
+  background: var(--accent); color: #06131f; border: 0;
+}
+.primary:hover { filter: brightness(1.08); }

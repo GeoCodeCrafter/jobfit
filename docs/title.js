@@ -58,3 +58,40 @@ export function titleFactor(title, profile) {
   // A different technical domain. Related, but not what they do.
   return 0.6;
 }
+
+// Job families. Used when a live result has no description and the title is
+// the only thing to go on: "Software Engineer" is a plausible match for a
+// frontend CV even though the title names no domain at all.
+const ROLES = {
+  engineer: ["engineer", "engineering"],
+  developer: ["developer", "development"],
+  designer: ["designer", "design"],
+  analyst: ["analyst", "analytics"],
+  scientist: ["scientist"],
+  architect: ["architect"],
+  manager: ["manager", "head of", "director"],
+  lead: ["lead", "principal", "staff"],
+  consultant: ["consultant"],
+  specialist: ["specialist"],
+};
+
+function rolesIn(text) {
+  const lower = text.toLowerCase();
+  const found = new Set();
+  for (const [role, words] of Object.entries(ROLES)) {
+    if (words.some((w) => lower.includes(w))) found.add(role);
+  }
+  return found;
+}
+
+export function cvRoles(text) {
+  return rolesIn(text.slice(0, 1200));
+}
+
+/** Does this title describe the same kind of job the CV describes? */
+export function sharesRole(title, roles) {
+  if (!roles.size) return false;
+  const theirs = rolesIn(title);
+  for (const r of theirs) if (roles.has(r)) return true;
+  return false;
+}

@@ -46,6 +46,19 @@
       <input type="checkbox" id="remote-only">
       Remote only
     </label>
+    <label>
+      Jobs open to
+      <select id="country"></select>
+      <span id="where-note" class="note"></span>
+    </label>
+    <label class="live-line">
+      <button type="button" id="search-live" class="primary">Search company boards live</button>
+      <span class="check">
+        <input type="checkbox" id="include-ashby">
+        also Ashby boards (slower, ~27MB)
+      </span>
+      <span id="progress" class="note" hidden></span>
+    </label>
     <label class="skills-line">
       Matched on: <span id="my-skills"></span>
     </label>
@@ -56,9 +69,10 @@
 
 <footer>
   <p>
-    Job data is a static file in
-    <a href="https://github.com/GeoCodeCrafter/jobfit">the repo</a>, rebuilt from
-    public company job boards. MIT licensed.
+    Results come from a saved index to start with. Hit
+    <em>search company boards live</em> and your browser queries around 100
+    company hiring systems directly, so you see what is posted right now.
+    <a href="https://github.com/GeoCodeCrafter/jobfit">Source</a>, MIT licensed.
   </p>
   <p class="small">
     Ages come from the company's own hiring system, not the job board. Lever

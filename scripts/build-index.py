@@ -14,6 +14,9 @@ import sqlite3
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from places import classify  # noqa: E402
+
 OUT = Path(__file__).resolve().parents[1] / "docs" / "jobs.json"
 
 
@@ -50,6 +53,9 @@ def build(db: str) -> dict:
                 # its dates are not posting ages. Drop them rather than mislead.
                 "p": (r["posted_at"] or "")[:10] if r["ats"] != "lever" else "",
                 "l": r["location_raw"] or "",
+                # Country and region tokens, resolved here so the browser only
+                # compares short strings. See places.py.
+                "k": classify(r["location_raw"] or ""),
                 "r": r["remote_type"] or "",
                 "m": r["salary_min_gbp"],
             }
